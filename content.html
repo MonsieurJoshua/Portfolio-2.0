@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Changa:wght@200..800&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+    <title>Antony Zharon</title>
+    <style>
+     
+        
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            cursor: url('./images/cursor.png') 16 16, auto;
+        }
+
+        .star-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        section {
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: transparent;
+            z-index: 1;
+            position: relative;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-color: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #666;
+        }
+
+        @supports (scrollbar-color: auto) {
+            html {
+                scrollbar-width: thin;
+                scrollbar-color: #444 black;
+            }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); } 
+        }
+        a, #myimage{
+            cursor: url('./images/cursor2.png') 16 16, auto;
+        }
+
+        #header {
+            position: fixed;
+            height: 6%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px; 
+            z-index: 2;
+        }
+        
+        #mylogo {
+            height: 20px;
+            width: auto; 
+            opacity: 0.8;
+        }
+        
+
+        .header_elements{
+            color: white;
+            font-family: "Chakra Petch", sans-serif;
+            opacity: 0.8;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        #myimage {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateZ(3deg);
+            width: 25%;      
+            max-width: none;     
+            height: auto;         
+            opacity: 0.9;
+            border-radius: 30px;
+        }
+        
+        /*section1*/
+        #name1_section1 {
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            font-size: 150px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #name2_section1 {
+            position: absolute;
+            top: 60%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            font-size: 150px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #background_section1{
+            position: absolute;
+            width: 1400px;
+            filter: invert(100%);
+            opacity: 0.1;
+        }
+
+
+        /*section2*/
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 2s ease, transform 2s ease;
+        }
+
+        .reveal-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #aboutme1_section2{
+            position: absolute;
+            width: 80%;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 400;
+            line-height: 50px;
+        }
+        #aboutme2_section2{
+            position: absolute;
+            width: 30%;
+            top: 60%;
+            left: 70%;
+            transform: translate(-50%,-50%);
+            font-size: 20px;
+            text-align: justify;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+         /*section3*/
+        .box_section2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            font-size: 18px;
+            width: 150px; 
+            height: 160px; 
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+            transform-origin: center; 
+        }
+        .box_section2:hover{
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            transform: scale(1.05); 
+            cursor: url('./images/cursor2.png') 16 16, auto;
+        }
+
+        .container_section2 {
+            display: grid;
+            gap: 30px;
+            padding: 8px;
+            overflow: hidden;
+            position: absolute;
+            text-align: center;
+            top: 20%;
+            }
+
+        #section3_heading{
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: "Chakra Petch", sans-serif;
+        }
+
+        .certificate_icon {
+            padding-top: 100px;
+            position: absolute;
+            font-size: 12px;
+            font-family: "Chakra Petch", sans-serif;
+
+        }
+
+        
+
+        @media (min-width: 768px) {
+            .container_section2 {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container_section2 {
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
+                top: 10%;
+            }
+
+            .box_section2{
+                font-size: 0.8rem; 
+                height: 120px;
+                width: 100px;
+                max-width: 120px;
+                box-sizing: border-box;
+            }
+            #section3_heading{
+                font-size: 23px;
+                top: 5%;
+            }
+        }
+
+
+
+        @media (max-width: 600px) { 
+            #myimage {
+                width: 70%;
+                max-width: none; 
+            }
+            #name1_section1{
+                top: 30%;
+            }
+            #name1_section1 , #name2_section1{
+                font-size: 90px;
+            }
+            .header_elements{
+                font-size: 12px;
+            }
+            nav{
+                gap: 7px;
+            }
+            #mylogo{
+                height: 15px;
+            }
+            #aboutme1_section2{
+                font-size: 1.5rem;
+                line-height: 35px;
+                width: 80%;
+            }
+            #aboutme2_section2{
+                font-size: 13px;
+                line-height: 18px;
+                width: 60%;
+                top: 70%;
+                left: 60%;
+            }
+        }
+        
+
+    /*Section4*/
+    .grid-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .large-rect, .small-rect {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        transform-origin: center; 
+      }
+      .large-rect {
+        width: 430px; 
+        height: 280px; 
+        border: 2px solid rgba(255, 255, 255, 0.53);
+      }
+      .large-rect:hover{
+        transform: scale(1.02);
+        cursor: url('./images/cursor2.png') 16 16, auto;
+      }
+      .small-rect:hover{
+        transform: scale(1.03);
+        cursor: url('./images/cursor2.png') 16 16, auto;
+      }
+      .small-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 120px);
+        gap: 40px;
+      }
+      .small-rect {
+        width: 120px; 
+        height: 120px; 
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.515);
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .box-content {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        font-size: 15px;
+        z-index: 1;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      .box-image {
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        z-index: 0;
+      }
+      
+      #big-box-content {
+        position: absolute;
+        bottom: 25px;
+        left: 20px;
+        color: white;
+        font-size: 15px;
+        z-index: 1;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #big-box-image {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      .slideshow {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .slide.active {
+        opacity: 1;
+    }
+
+    #section4_heading{
+        position: absolute;
+        top: 8%;
+        left: 46%;
+        transform: translate(-50,-50%);
+        font-family: 'Delius Swash Caps';
+        border: 1px solid white;
+        font-size: 35px;
+        padding: 5px 6px 5px 6px;
+        opacity: 0.9;
+    }
+    #section4_heading2{
+        position: absolute;
+        top: 60%;
+        left: 45%;
+        transform: translate(-50,-50%);
+        font-family: 'Delius Swash Caps';
+        border: 1px solid white;
+        font-size: 35px;
+        padding: 5px 6px 5px 6px;
+        opacity: 0.9;
+    }
+    #experience_set{
+        position: absolute;
+        font-size: 18px;
+        opacity: 0.8;
+        font-family: 'Chakra Petch';
+        line-height: 40px;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        list-style-type:circle;
+
+    }
+      
+      /*section5*/
+      #section5_back{
+        font-size: 200px;
+        position: absolute;
+        left:2%;
+        opacity: 0.9;
+        font-family: 'Chakra Petch';
+      }
+      #contact_details{
+        position: absolute;
+        top: 40%;
+        left: 80%;
+        transform: translate(-50%,-50%);
+        font-size: 30px;
+
+      }
+
+      #contact_details_github, #contact_details_email, #contact_details_linkedin {
+        opacity: 0.7;
+      }
+      #contact_details_github:hover{
+        opacity: 0.9;
+      }
+      #contact_details_linkedin:hover{
+        opacity: 0.9;
+      }
+      #contact_details_email:hover{
+        opacity: 0.9;
+      }
+      .contact_images{
+        filter: invert(100%);
+        width: 25px;
+        position: absolute;
+        transform:translate(-50%,-50%);
+      }
+      .contact_text{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        line-height: 50px;
+      }
+
+      #ender{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        font-size: 14px;
+        transform: translate(-50%,-50%);
+        font-family: 'Chakra Petch';
+        font-weight: 200;
+        opacity: 0.5;
+      }
+
+      @media (max-width: 480px) {
+        .grid-container {
+          gap: 10px;
+          top: 28%; 
+        }
+      
+        .large-rect {
+          width: 200px; 
+          height: 130px; 
+        }
+      
+        .small-grid {
+          grid-template-columns: repeat(2, 60px); 
+          gap: 10px; 
+        }
+      
+        .small-rect {
+          width: 60px; 
+          height: 60px;
+        }
+      
+        .box-content {
+          font-size: 8px;
+        }
+      
+        #big-box-content {
+          font-size: 12px; 
+        }
+      
+        .box-image {
+          height: 50%;
+          opacity: 0.8;
+        }
+        #section4_heading{
+            font-size: 20px;
+            left: 40%;
+        }
+        #section4_heading2{
+            font-size: 20px;
+            left: 35%;
+            top: 50%;
+        }
+        #experience_set{
+            font-size: 12px;
+            width: 60%;
+            top: 70%;
+            left: 55%;
+            line-height: 25px;
+        }
+        #section5_back{
+            font-size: 70px;
+            top: 0%;
+            left: 16%;
+        }
+        #contact_details{
+            top: 55%;
+            left: 55%;
+        }
+        #ender{
+            font-size: 10px;
+            top: 90%;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <div id="content_page">
+        <div class="star-container" id="starContainer"></div>
+
+        <header id="header">
+        <a href="#home"><img src="./images/mylogo.png" id="mylogo" alt="mylogo"></a>
+        <nav aria-label="Main Navigation">
+            <a href="#home" id="header_homet" class="header_elements">Home.</a>
+            <a href="#about" id="header_about" class="header_elements">About.</a>
+            <a href="#skills" id="header_skills" class="header_elements">Skills.</a>
+            <a href="#projects" id="header_projects" class="header_elements">Projects.</a>
+            <a href="#contact" id="header_contact" class="header_elements">Contact.</a>
+        </nav>
+    </header>
+
+    <main id="content_page">
+
+        <!-- section1 -->
+        <section id="home">
+            <img src="./images/spinner.png" id="background_section1"  alt="">
+            <img src="./images/myimage2.jpg" id="myimage" alt="">
+            <h1 id="name1_section1">Antony</h1>
+            <h1 id="name2_section1">Zharon</h1>
+        </section>
+
+
+        <!-- section2 -->
+        <section id="about" class="reveal-text-group">
+            <p class="reveal-text" id="aboutme1_section2">Hey, Zharon here.👋 I'm a <span style="color: black; background-color:white; padding: 3px 8px 3px 8px"><b>Web Developer</b></span> , Web Designer, and 3D designer based in Banglore, India. I love helping folks thrive in business & life with memorable web & 3D designs.</p>
+            <p class="reveal-text" id="aboutme2_section2">If you need help bringing a dream, idea, or business to life with pro visuals like websites & branding, or want to see an existing project grow with solid UI - give me a call!</p>
+        </section>
+
+
+        <!-- section3 -->
+        <section id="skills" class="reveal-text-group">
+            <h1 id="section3_heading" class="reveal-text">What i <span class="typing-effect" id="typed-text" style="color: black; background-color:white; padding: 3px 8px 3px 8px;  font-family: Delius Swash Caps, cursive;"><b> </b></span></h1>
+            <div class="container_section2">
+                <div class="box_section2">HTML</div>
+                <div class="box_section2">CSS</div>
+                <div class="box_section2">Java Script</div>
+                <div class="box_section2">Blender</div>
+                
+                <div class="box_section2" onclick="window.open('https://freecodecamp.org/certification/Zzz_/foundational-c-sharp-with-microsoft', '_blank');" >
+                    C#
+                    <p class="certificate_icon">See more...</p>
+                </div>
+                <div class="box_section2">NoSql</div>
+
+                <div class="box_section2">Java</div>
+
+                <div class="box_section2" id="android_studio_certificate" onclick="window.open('https://drive.google.com/file/d/1f7fchQHgKUhjaQE5rSEE3jgWfvE3_Q8d/view?usp=sharing', '_blank');">Android Studio
+                    <p class="certificate_icon">See more...</p>
+                </div>
+
+                <div class="box_section2" onclick="window.open('https://drive.google.com/file/d/1lhtlAHkWiURxmgZ4A-yPnT-3qOBKrJSE/view?usp=drive_link', '_blank');">
+                    AWS 
+                    <p class="certificate_icon">See more...</p>
+                </div>
+
+                <div class="box_section2">Python</div>
+
+                <div class="box_section2" onclick="window.open('https://drive.google.com/file/d/1tGbx78mvgp3AN--oejd8BpejJHUk9tse/view?usp=sharing', '_blank');">
+                    ML
+                    <p class="certificate_icon">See more...</p>
+                </div>
+
+                <div class="box_section2">Sql</div>
+                <div class="box_section2">Premiere Pro</div>
+
+                <div class="box_section2" onclick="window.open('https://drive.google.com/file/d/1Uos4Px4nT4d7iHoxc3lb0JrCS8DJgRj0/view?usp=sharing', '_blank');">Cyber Security
+                    <p class="certificate_icon">See more...</p>
+                </div>
+
+
+                <div class="box_section2" onclick="window.open('https://drive.google.com/file/d/1OMhso0Ei7VRhZ7v0oixycUsxRQtmyciY/view?usp=sharings', '_blank');">Canva
+                    <p class="certificate_icon">See more...</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- section4 -->
+        <section id="projects" class="reveal-text-group">
+            <h1 id="section4_heading" class="reveal-text"><span style="color: black; background-color:white; padding: 3px 3px 3px 8px;">Proj</span>ects</h1>
+            <div class="grid-container">
+                <div class="large-rect" onclick="window.open('https://github.com/Zzz1750/LOCK-IN', '_blank');">
+                  <div id="big-box-content"><b>LOCK IN</b></div>
+                  <div class="slideshow">
+                      <img class="slide" src="./images/lockin UI/Screenshot (333).png" alt="Slide 1">
+                      <img class="slide" src="./images/lockin UI/Screenshot (334).png" alt="Slide 2">
+                      <img class="slide" src="./images/lockin UI/Screenshot (335).png" alt="Slide 3">
+                      <img class="slide" src="./images/lockin UI/Screenshot (336).png" alt="Slide 4">
+                      <img class="slide" src="./images/lockin UI/Screenshot (337).png" alt="Slide 5">
+                      <img class="slide" src="./images/lockin UI/Screenshot (338).png" alt="Slide 6">
+                      <img class="slide" src="./images/lockin UI/Screenshot (339).png" alt="Slide 7">
+                      <img class="slide" src="./images/lockin UI/Screenshot (340).png" alt="Slide 8">
+                  </div>
+              </div>
+              
+                  <div class="small-grid">
+                      <div class="small-rect" onclick="window.open('https://github.com/Zzz1750/Movie_Map', '_blank');">
+                          <div class="box-content" ><b>Movie Map</b></div>
+                          <img class="box-image" src="./images/roll-film.png" alt="Box 1 Image">
+                      </div>
+                      <div class="small-rect"  onclick="window.open('https://github.com/Zzz1750/PG-Master', '_blank');">
+                          <div class="box-content" ><b>PG Master</b></div>
+                          <img class="box-image" src="./images/piano.png" alt="Box 2 Image">
+                      </div>
+                      <div class="small-rect" onclick="window.open('https://github.com/Ayyush-Maheshwari/E-We', '_blank');">
+                          <div class="box-content" ><b>E-We</b></div>
+                          <img class="box-image" src="./images/eco-car.png" alt="Box 3 Image">
+                      </div>
+                      <div class="small-rect" onclick="window.open('https://drive.google.com/file/d/10ezN3GmCDzNDTqtjeqsH11JYSEUfCY0Q/view?usp=sharings', '_blank');">
+                          <div class="box-content" style="width: 50%;"><b>Research Paper</b></div>
+                          <img class="box-image" src="./images/paper-clip.png" alt="Box 4 Image">
+                      </div>
+                  </div>
+              </div>
+              <div id="section4_heading2" class="reveal-text"><span style="color: black; background-color:white; padding: 3px 3px 3px 8px;"><b>Experi</b></span><b>ence</b></div>
+              <ul id="experience_set" >
+                <li>Head of AR/VR Club BYC</li>
+                <li>ACC Media Core Member</li>
+                <li>Working as a Game Designer for 'Chai & Paper Studios'</li>
+                <li>Working on 'REVERENCE Clothing Brand' Website</li>
+              </ul>
+        </section>
+
+        <!-- section5 -->
+        <section id="contact">
+            <div id="section5_back">Let's <br><span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: black; background-color:white; padding: 3px 3px 3px 8px;">WORK</span><br>Together</div>
+            <div id="contact_details">
+                <p class="contact_text" id="contact_details_github" onclick="window.open('https://github.com/Zzz1750', '_blank');"><img src="./images/github-sign.png" style="top: 17%; left:-30%" class="contact_images" >Github</p>
+                <p class="contact_text" id="contact_details_linkedin" onclick="window.open('https://www.linkedin.com/in/antonyzharon/', '_blank');"><img src="./images/linkedin.png" style="top: 50%; left:-30%" class="contact_images">Linkedin</p>
+                <p class="contact_text" id="contact_details_email" onclick="window.location.href='mailto:antonyzharon2@gmail.com?subject=Lets%20Connect!'">
+                    <img src="./images/email.png" style="top: 83%; left: -30%; width: 28px;" class="contact_images">Email</p>    
+            </div>
+            <p id="ender">i love coding @2024</p>
+        </section>
+    </main>
+</div>
+
+    <!-- section2 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const revealTexts = document.querySelectorAll(".reveal-text");
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.4 }); 
+        
+            revealTexts.forEach(text => {
+                observer.observe(text);
+            });
+        });
+    </script>
+
+        <!-- Parent -->
+        <script>
+            const numberOfStars = 30;
+            const starContainer = document.getElementById('starContainer'); 
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                const x = Math.random() * window.innerWidth;
+                star.style.left = `${x}px`;
+
+                const duration = Math.random() * 5 + 10;
+                star.style.animationDuration = `${duration}s`;
+
+                const delay = Math.random() * duration;
+                star.style.animationDelay = `-${delay}s`;
+
+                starContainer.appendChild(star);
+            }
+        </script>
+        <script>
+            var content_page = document.getElementById('content_page');
+            content_page.style.opacity = '0';
+            content_page.style.display = 'block';
+            setTimeout(function() {
+                content_page.style.transition = 'opacity 2s ease';
+                content_page.style.opacity = '1';
+            }, 2000);
+        </script>
+         
+        
+        
+       
+       <!-- section1 -->
+        <script>
+            const antony = document.getElementById("name1_section1");
+            const zharon = document.getElementById("name2_section1");
+        
+            const initialLeftAntony = 40;
+            const targetLeftAntony = 0; 
+            const scrollFactorAntony = 0.1;
+            let currentLeftAntony = initialLeftAntony; 
+        
+            const initialLeftZharon = 65; 
+            const targetLeftZharon = 100; 
+            const scrollFactorZharon = 0.1; 
+            let currentLeftZharon = initialLeftZharon;
+        
+            function smoothScroll() {
+                const scrollPosition = window.scrollY * scrollFactorAntony;
+                const newLeftAntony = Math.max(initialLeftAntony - scrollPosition, targetLeftAntony);
+                currentLeftAntony += (newLeftAntony - currentLeftAntony) * 0.1;
+        
+                antony.style.left = `${currentLeftAntony}%`;
+        
+                const newLeftZharon = Math.min(initialLeftZharon + scrollPosition, targetLeftZharon);
+                currentLeftZharon += (newLeftZharon - currentLeftZharon) * 0.1;
+        
+                zharon.style.left = `${currentLeftZharon}%`;
+        
+                requestAnimationFrame(smoothScroll);
+            }
+        
+            smoothScroll();
+        </script>
+        
+        <script>
+            window.onload = function() {
+                const homeSection = document.getElementById('home');
+                if (homeSection) {
+                    homeSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+        </script>
+
+
+
+
+        <!-- section3 -->
+        <script>
+            const text1 = "do";
+            const text2 = "LOVE";
+            let currentText = text1;
+            let index = 0;
+            let isDeleting = false;
+          
+            function type() {
+              const element = document.getElementById("typed-text");
+          
+              if (isDeleting) {
+                element.textContent = currentText.slice(0, index);
+                if (index > 0) {
+                  index--;
+                  setTimeout(type, 100);
+                } else {
+                  isDeleting = false;
+                  currentText = text2;
+                  index = 0;
+                  setTimeout(type, 100); 
+                }
+              } else {
+                element.textContent = currentText.slice(0, index);
+                if (index < currentText.length) {
+                  index++;
+                  setTimeout(type, 300);
+                } else {
+                  if (currentText === text1) {
+                    isDeleting = true;
+                    setTimeout(type, 300);
+                  } else {
+
+                    return; 
+                  }
+                }
+              }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const section3 = document.getElementById("skills");
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            type();
+                        }
+                    });
+                }, { threshold: 0.5 });
+            
+                observer.observe(section3);
+            });
+            
+        </script>
+        
+        <!-- section4 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const section4 = document.getElementById("projects");
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setInterval(showNextSlide, 3000);
+                        }
+                    });
+                }, { threshold: 0.5 });
+            
+                observer.observe(section4);
+            });
+
+              const slides = document.querySelectorAll('.slide');
+              let currentSlide = 0;
+          
+              function showNextSlide() {
+                  slides[currentSlide].classList.remove('active');
+                  currentSlide = (currentSlide + 1) % slides.length;
+                  slides[currentSlide].classList.add('active');
+              }
+          
+              slides[0].classList.add('active');          
+          </script>
+</body>
+</html>

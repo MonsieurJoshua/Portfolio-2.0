@@ -1,227 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/fa62c117c7.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css" />
-    <title>Joshua Eapen</title>    <!-- Change it your name  --> .
-  </head>
-  <body class="light" id="top">
-    <header class="header center">
-      <h3>
-        <a href="https://www.linkedin.com/in/joshua-eapen-068425202/" class="link"  
-          >{JE}. <!--insert your initials here --></a
-        >
-      </h3> <!--use the linkedIn or any link in above href-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Antony Zharon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./portfolio.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            #greeting {
+                font-size: 40px;
+            }
+            .star{
+                width: 1px;
+                height: 1px;
+            }
+            #name{
+                font-size: 38px;
+            }
+            #front_page_hello{
+                font-size: 30px;
+            }
+            #front_page_tag{
+                font-size: 20px;
+            }
+            #heading_displayer{
+                top: 30%;
+                left: 30%;
+            }
+            #front_page_button{
+                top: 60%;
+                font-size: 12px;
+                padding: 8px 13px 8px 13px;
+            }
+        }  
 
-      <nav class="nav center">
-        <ul class="nav__list center">
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#projects">Projects.</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#skills">Skills.</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#Internship">Internship.</a>
-          </li>
-          <!--   <li class="nav__list-item">
-            <a class="link link--nav" href="#Exp">Experience</a>
-          </li>-->
-        </ul>
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: moveDown linear infinite;
+            opacity: 0.7;
+            z-index: 0;
+            pointer-events: none;
+            top: 0;
+        }
 
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
-          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
-
-        <button
-          type="button"
-          aria-label="toggle navigation"
-          class="btn btn--icon nav__hamburger"
-        >
-          <i aria-hidden="true" class="fas fa-bars"></i>
-        </button>
-      </nav>
-    </header>
-
-    <main>
-      <!-- About -->
-      <div class="about center">
-        <h1>Hi, I am <span class="about__name">Joshua Eapen.</span></h1>
-        <h2 class="about__role"></h2>
-        <p class="about__desc"> <!-- Edit the About make sure you add your degree!-->
-          I'm a Tech geek living in Bangalore, India. I love to solve problems and build things. I am presently an under grad Computer Science student at Christ University.
-        </p> <!-- about you -->
-        <br>
-        <a href="mailto:joshua1eapen2004@gmail.com">Mail : joshua1eapen2004@gmail.com.</a><p> Contact : +91 8129963104.</p>  <!--Change it to your mail id and contact no-->
-      </br>
-      
-
-        <div class="about__contact center">
-          <a href="https://drive.google.com/file/d/1fiYlv7Ou0tKWSdUlQwpc5Ye3hDEya3kK/view" target="_blank"  > <!-- drive link for resume-->
-            <span class="btn btn--outline">Resume.</span> 
-          </a>
-
-          <a
-            href="https://github.com/MonsieurJoshua" target="_blank"
-            aria-label="github"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a> <!-- Github profile Link-->
-
-          <a
-            href="https://www.linkedin.com/in/joshua-eapen-068425202/" target="_blank"  
-            aria-label="linkedin"
-            class="link link--icon"
-          > 
-            <i aria-hidden="true" class="fab fa-linkedin"></i>
-          </a> <!-- LinledIn profile Link-->
-        </div>
-      </div>
-
-      <!-- Projects -->
-      <section id="projects" class="section projects">
-        <h2 class="section__title">Projects.</h2>
-
-        <div class="projects__grid">
-          <div class="project">
-            <h3>DevMatrix.</h3> <!--Peoject Title -->
-            <p class="project__description">
-              A Website designed to make the lives of UI/UX designers easier. Providing precoded buttons and UI elements.
-            </p> <!--Project description-->
-            <ul class="project__stack">
-              <li class="project__stack-item">HTML</li>
-              <li class="project__stack-item">CSS</li>
-              <li class="project__stack-item">JavaScript</li>
-              <li class="project__stack-item">NodeJS</li>
-              <li class="project__stack-item">MongoDB</li>
-            </ul>
-
-            <a
-              href="https://github.com/Hasib072/DevMatrix" target="_blank"
-              aria-label="source code"
-              class="link link--icon"
-            >  <!--Project link-->
-
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-            <a
-              href=""
-              aria-label="live preview"
-              class="link link--icon"
-            > <!--Project demo or git link-->
-              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-
-          <div class="project">
-            <h3>Lock-In.</h3>
-            <p class="project__description">
-              A Web based game designed to improve in-game aim accuracy.
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">HTML</li>
-              <li class="project__stack-item">CSS</li>
-              <li class="project__stack-item">JavaScript</li>
-              <li class="project__stack-item">Firebase</li>
-              <li class="project__stack-item">Python(scikit-learn)</li>
-            </ul>
-
-            <a
-              href="" target="_blank"
-              aria-label="" target="_blank"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-            <a
-              href=""
-              aria-label="live preview"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-        </div>
+        #front_page_button {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 30px;
+            color: rgba(255, 255, 255, 0.8);
+            background-color: black;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 35px;
+            font-family: 'Spartan', sans-serif;
+            cursor: pointer;
+            z-index: 5;
+            text-align: center;
+            transition: all 0.5s;
+            display: none;
+            animation: front_page_button_blink 1s infinite alternate;
+        }
         
-
-      </section>
+        @keyframes front_page_button_blink {
+            0% { box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); }
+        }
+        
+        #front_page_button:hover{
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.95);
+        }
+        #front_page_button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
           
-      <!--<section id="Internship" class="section Internship" id="Internship">
-        <h2 class="section__title">Internships & Certifications</h2>
+        #front_page_button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+        }
+          
+        #front_page_button:hover span {
+        padding-right: 20px;
+        }
+        
+        #front_page_button:hover span:after {
+        opacity: 1;
+        right: 0;
+        }
+        #rocket_design{
+            transform: translate(-50%,-50%);
+            width: 400px;
+            z-index: 15;
+            filter: invert(100%);
+            transition: all 2s ease-in-out;
+            position: absolute;
+        }  
+        #rocket_design.animate_rocket{
+            animation: rocket_design_vibrater 3s infinite alternate ease-in-out;
+        }
+        #rocket_design_mover{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.5s ease;
+        }
+        #rocket_design_mover.animate_rocket_mover {
+            opacity: 0.2;
+            transform: translateY(-40px);
+        }
+        #rocket_design_mover.animate_rocket_exit {
+            transition: transform 4s ease;
+            transform: translateY(-100vh);
+        }
+        @keyframes rocket_design_vibrater{
+            0%{
+                transform: translate(-25px,5px);
+            }
+            100%{
+                transform: translate(-40px,-5px);
+            }
+        }
 
-    
-        <a
-          href=""  
-          aria-label="" target="_blank"
-          class="link link--icon"
-        > <!-- Include the certification links and  -->
-         <!-- <i aria-hidden="true" class="fab fa-github"></i>
-        </a>
-        <a
-          href=""
-          aria-label="live preview"
-          class="link link--icon"
-        >
-          <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
+        #front_page {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- front_page -->
+     <div id="front_page">
+        <div id="intro">
+            <h1 id="greeting"></h1>
+        </div>
+
+        <div class="heading" id="heading_displayer">
+            <div>
+                <p class="slide-up" id="front_page_hello"><span>I am,</span></p>
+            </div>
+            <div>
+                <p class="slide-up" id="name"><span class="white">Antony Zharon</span></p>
+            </div>
+            <div>
+                <p class="slide-up" id="front_page_tag">#2024</p>
+            </div>
+        </div>
+
+        <button id="front_page_button"><span>take tour</span></button>
     </div>
-  </section>-->
 
- <!-- duplicate the above section and you can change it to paper or experience-->
-
-      
-      <!-- Skills -->
-      <section class="section skills" id="skills">
-        <h2 class="section__title">Skills.</h2>
-        <ul class="skills__list">
-          <li class="skills__list-item btn btn--plain">HTML</li>                        <!--You can fill in the elective course and you can remove extras-->
-          <li class="skills__list-item btn btn--plain">CSS</li>
-          <li class="skills__list-item btn btn--plain">JavaScript</li>
-          <li class="skills__list-item btn btn--plain">MS Office</li>
-          <li class="skills__list-item btn btn--plain">Python</li>
-          <li class="skills__list-item btn btn--plain">Machine Learning</li>
-          <li class="skills__list-item btn btn--plain">Adobe Photoshop</li>
-          <li class="skills__list-item btn btn--plain">Blender</li>
-          <li class="skills__list-item btn btn--plain">FL Studio</li>
-          <li class="skills__list-item btn btn--plain">BandLab</li>
-          <li class="skills__list-item btn btn--plain">Ableton Live 10 Lite</li>
-          <li class="skills__list-item btn btn--plain">MySQL</li>
-          <li class="skills__list-item btn btn--plain">Soundtrap</li>
-          <li class="skills__list-item btn btn--plain">Cubase AI</li>
-        </ul>
-      </section>
-
-    <footer class="footer">
-      <a
-        href="" 
-        class="link footer__link"
-      >  
-        Created By Joshua Eapen.
-      </a>
-    </footer>
-
-    <div class="scroll-container">
-    <div class="scroll-top">
-      <a aria-label="Scroll up" href="#top">
-        <i aria-hidden="true" class="fas fa-arrow-up"></i>
-      </a>
-    </div>
+    <div id="rocket_design_mover">
+        <img id="rocket_design" src="./images/rocket.png" alt="rocket_design">
     </div>
 
-    <script src="./script.js"></script>
-  </body>
+    <script>
+        const numberOfStars = 100;
+        const frontPage = document.getElementById('front_page');
+
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            const x = Math.random() * frontPage.offsetWidth;
+            star.style.left = `${x}px`;
+
+            const duration = Math.random() * 10 + 10; 
+            star.style.animationDuration = `${duration}s`;
+
+            const delay = Math.random() * duration;
+            star.style.animationDelay = `-${delay}s`;
+
+            frontPage.appendChild(star);
+        }
+    </script>
+    <script>
+        var greet = document.getElementById('greeting');
+        var intro = document.getElementById('intro');
+        var star = document.getElementsByClassName('star');
+
+        var heading_displayer = document.getElementById('heading_displayer');
+        var front_page_button = document.getElementById('front_page_button');
+
+        var front_page = document.getElementById('front_page');
+        var rocket_design = document.getElementById('rocket_design');
+        var rocket_design_mover = document.getElementById('rocket_design_mover');
+
+        var home_button = document.getElementById('home');
+
+        // intro
+        var i = 0;
+        const ar = ["Hola","Bonjour","হ্যালো","ഹലോ","Ciao","Привіт","안녕하세요","مرحبا","नमस्ते", "こんにちは", "Olá","Hello"];
+
+        function playintro(i) {
+            if (i < ar.length) {
+                greet.innerHTML = ar[i];
+                setTimeout(() => playintro(i + 1), 130);
+            }
+        }
+        playintro(i);
+
+        setTimeout(intro_remover,2000);
+        function intro_remover() {
+                intro.style.transition = '0.3s';
+                intro.style.opacity = 0;
+                setTimeout(star_displayer,500);
+
+                function star_displayer(){
+                    for (let i = 0; i < star.length; i++) {
+                        star[i].style.opacity = 0.8;
+                        star[i].style.transition ='0.3s';
+                    }
+                }
+                
+            }
+
+        // name
+        setTimeout(function(){
+            heading_displayer.style.display='block'
+            front_page_button.style.opacity='0'
+            front_page_button.style.display='block'
+            setTimeout(function(){
+                if (document.getElementById("rocket_design_mover")) {
+                    document.getElementById("rocket_design_mover").classList.add("animate_rocket_mover");
+                }    },400)
+            setTimeout(function(){
+                front_page_button.style.opacity='1'
+            },600)
+            setTimeout(function(){
+                if (document.getElementById("rocket_design")) {
+                    document.getElementById("rocket_design").classList.add("animate_rocket");
+                }    })
+        },1600)
+
+
+        front_page_button.addEventListener('click', function() {
+            dimmer(front_page);
+            document.getElementById("rocket_design_mover").classList.add("animate_rocket_exit");
+            setTimeout(function() {
+                dimmer(rocket_design_mover)
+            }, 430);
+
+            setTimeout(function(){
+                window.location.href = 'content.html';
+            },800);
+        });
+
+
+
+        //common function
+        function dimmer(element) {
+            element.style.transition = 'opacity 1s ease';
+            element.style.opacity = '0';
+        }
+    </script>
+</body>
 </html>
